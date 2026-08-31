@@ -36,16 +36,13 @@ export function GlassCard({
 export function PrimaryLink({
   to,
   children,
-  hash,
 }: {
   to: string;
   children: ReactNode;
-  hash?: string;
 }) {
   return (
     <Link
       to={to}
-      hash={hash}
       className="inline-block rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-foreground/90"
     >
       {children}
