@@ -1,34 +1,32 @@
 import { Link } from "@tanstack/react-router";
 
+import logoDark from "@/assets/alpha-stem-logo.png.asset.json";
+import logoLight from "@/assets/alpha-stem-logo-light.png.asset.json";
+
 export function Logo({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const isLight = tone === "light";
 
   return (
-    <Link to="/" className="flex items-center gap-3" aria-label="Alpha STEM Academy — home">
+    <Link
+      to="/"
+      className="flex items-center gap-3"
+      aria-label="Alpha STEM Academy — home"
+    >
+      <img
+        src={isLight ? logoLight.url : logoDark.url}
+        alt="Alpha STEM Academy"
+        width={296}
+        height={139}
+        className="h-11 w-auto sm:h-12"
+      />
       <span
-        className={
-          isLight
-            ? "grid size-10 shrink-0 place-items-center rounded-xl bg-background font-display text-lg font-semibold text-foreground"
-            : "grid size-10 shrink-0 place-items-center rounded-xl bg-foreground font-display text-lg font-semibold text-background"
-        }
+        className={`hidden font-display text-[11px] font-semibold leading-none sm:block ${
+          isLight ? "text-background/70" : "text-muted-foreground"
+        }`}
       >
-        A
-      </span>
-      <span className="block">
-        <span
-          className={`block font-display text-sm font-semibold uppercase leading-none tracking-[0.14em] ${
-            isLight ? "text-background" : "text-foreground"
-          }`}
-        >
-          Alpha STEM Academy
-        </span>
-        <span
-          className={`mt-1 block font-mono text-[10px] leading-none ${
-            isLight ? "text-background/60" : "text-muted-foreground"
-          }`}
-        >
-          Where Learning Becomes Capability.
-        </span>
+        Where Learning
+        <br />
+        Becomes Capability.
       </span>
     </Link>
   );
