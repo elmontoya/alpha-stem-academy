@@ -1,10 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   Atom,
   Banknote,
   BookOpen,
   Braces,
-  Calculator,
   Compass,
   FlaskConical,
   Gift,
@@ -519,10 +518,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <p className="sr-only">
-        <Link to="/contact">Contact Alpha STEM Academy</Link>
-      </p>
     </div>
   );
 }
