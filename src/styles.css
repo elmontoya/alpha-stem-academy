@@ -5,14 +5,14 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Alpha STEM Academy design system — "Instrumented Glass".
- * Cool, precise, premium. All colours are oklch semantic tokens.
+ * Alpha STEM Academy design system — "Playful Lab".
+ * Kid-friendly, bright and bouncy: black, green, yellow, white.
  */
 
 @theme inline {
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Baloo 2", ui-rounded, "Segoe UI", sans-serif;
+  --font-body: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Baloo 2", ui-rounded, sans-serif;
   --font-sans: var(--font-body);
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -41,33 +41,33 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --shadow-card: 0 18px 40px -28px var(--shadow-tint);
-  --shadow-card-hover: 0 28px 56px -26px var(--shadow-tint-strong);
-  --shadow-float: 0 20px 50px -24px var(--shadow-tint-strong);
+  --shadow-card: 0 10px 0 -2px var(--shadow-tint);
+  --shadow-card-hover: 0 16px 0 -2px var(--shadow-tint-strong);
+  --shadow-float: 0 14px 34px -18px var(--shadow-tint-strong);
 
-  --ease-instrument: cubic-bezier(0.2, 0.7, 0, 1);
+  --ease-instrument: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 1.5rem;
 
-  --background: oklch(0.977 0.008 235);
-  --foreground: oklch(0.256 0.043 259);
+  --background: oklch(0.995 0.008 110);
+  --foreground: oklch(0.19 0.01 160);
   --surface: oklch(1 0 0);
-  --muted: oklch(0.955 0.01 235);
-  --muted-foreground: oklch(0.472 0.043 258);
-  --primary: oklch(0.575 0.13 231);
-  --primary-foreground: oklch(0.99 0.005 235);
-  --primary-soft: oklch(0.716 0.126 232);
-  --signal: oklch(0.673 0.14 231);
-  --accent: oklch(0.94 0.03 231);
-  --accent-foreground: oklch(0.36 0.09 245);
-  --border: oklch(0.256 0.043 259 / 0.1);
-  --input: oklch(0.256 0.043 259 / 0.16);
-  --ring: oklch(0.575 0.13 231);
+  --muted: oklch(0.962 0.024 140);
+  --muted-foreground: oklch(0.44 0.02 165);
+  --primary: oklch(0.53 0.115 174);
+  --primary-foreground: oklch(0.99 0.01 120);
+  --primary-soft: oklch(0.72 0.13 165);
+  --signal: oklch(0.86 0.17 96);
+  --accent: oklch(0.93 0.15 100);
+  --accent-foreground: oklch(0.24 0.03 100);
+  --border: oklch(0.19 0.01 160 / 0.14);
+  --input: oklch(0.19 0.01 160 / 0.2);
+  --ring: oklch(0.53 0.115 174);
 
-  --shadow-tint: oklch(0.256 0.043 259 / 0.3);
-  --shadow-tint-strong: oklch(0.256 0.043 259 / 0.4);
+  --shadow-tint: oklch(0.19 0.01 160 / 0.14);
+  --shadow-tint-strong: oklch(0.19 0.01 160 / 0.22);
 }
 
 @layer base {
@@ -119,25 +119,32 @@
 }
 
 @utility eyebrow {
-  font-family: var(--font-mono);
+  display: inline-block;
+  font-family: var(--font-display);
   font-size: 0.75rem;
+  font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-accent-foreground);
+  background-color: var(--color-signal);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
 }
 
 @utility label-mono {
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.18em;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 @utility glass-panel {
-  border: 1px solid var(--color-border);
-  background-color: color-mix(in oklab, var(--surface) 65%, transparent);
-  backdrop-filter: blur(8px);
+  border: 2px solid var(--color-border);
+  border-radius: 1.75rem;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-card);
 }
 
 @media (prefers-reduced-motion: reduce) {
