@@ -1,9 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Award,
   BookOpenCheck,
   Boxes,
-  Building2,
   Coins,
   Compass,
   Cpu,
@@ -11,14 +9,13 @@ import {
   Globe2,
   Languages,
   Laptop,
-  Lightbulb,
   Puzzle,
   Rocket,
   Sparkles,
-  Target,
   Users,
   Wrench,
 } from "lucide-react";
+
 
 import financeImage from "@/assets/alphaplus-financial-literacy.jpg";
 import clubImage from "@/assets/alphaplus-coding-club.jpg";
