@@ -377,7 +377,10 @@ function AlphaPlus() {
               <p className="mt-2 flex-1 text-sm text-pretty text-muted-foreground">
                 {body}
               </p>
-              <SecondaryLink to="/contact">Learn More</SecondaryLink>
+              <div className="mt-5">
+                <SecondaryLink to="/contact">Learn More</SecondaryLink>
+              </div>
+
             </article>
           ))}
         </div>
