@@ -389,7 +389,7 @@ function Contact() {
               </ul>
               <p className="mt-8 text-sm text-pretty text-muted-foreground">
                 Prefer to talk first? Call{" "}
-                <a href={telHref(contact.phones[0])} className="font-semibold text-primary">
+                <a href={telHref(contact.phones[0] ?? "")} className="font-semibold text-primary">
                   {contact.phones[0]}
                 </a>{" "}
                 and we'll take it from there.
