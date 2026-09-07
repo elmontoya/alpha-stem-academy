@@ -41,10 +41,8 @@ export const enquirySchema = z.object({
     .trim()
     .min(7, { message: "Please enter a phone number we can reach you on." })
     .max(30, { message: "Phone number must be less than 30 characters." }),
-  role: z.enum(enquirerRoles, { message: "Please tell us who you are." }),
-  interest: z.enum(enquiryInterests, {
-    message: "Please choose what you're interested in.",
-  }),
+  role: z.enum(enquirerRoles),
+  interest: z.enum(enquiryInterests),
   message: z
     .string()
     .trim()
