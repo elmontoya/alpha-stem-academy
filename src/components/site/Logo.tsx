@@ -20,7 +20,7 @@ export function Logo({ tone = "dark" }: { tone?: "dark" | "light" }) {
         className="h-11 w-auto sm:h-12"
       />
       <span
-        className={`hidden font-display text-[11px] font-semibold leading-none sm:block ${
+        className={`font-display text-[10px] font-semibold leading-tight sm:text-[11px] ${
           isLight ? "text-background/70" : "text-muted-foreground"
         }`}
       >
