@@ -26,7 +26,7 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Alpha STEM Academy" },
+      { title: "About Alpha STEM Academy | Education Reimagined" },
       {
         name: "description",
         content:

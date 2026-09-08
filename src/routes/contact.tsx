@@ -24,7 +24,7 @@ import {
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Alpha STEM Academy — Enquiries & Partnerships" },
+      { title: "Contact Alpha STEM Academy" },
       {
         name: "description",
         content:

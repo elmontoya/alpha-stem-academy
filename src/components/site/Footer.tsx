@@ -61,10 +61,10 @@ export function Footer() {
             <p className="label-mono text-muted-foreground">Programs</p>
             <ul className="mt-4 space-y-3 text-sm">
               {programItems.map((p) => (
-                <li key={p.slug}>
+                <li key={p.title}>
                   <Link
-                    to="/programs"
-                    hash={p.slug}
+                    to={p.to}
+                    hash={p.hash}
                     className="text-foreground/80 transition-colors hover:text-foreground"
                   >
                     {p.title}
