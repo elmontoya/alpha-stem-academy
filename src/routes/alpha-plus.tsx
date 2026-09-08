@@ -30,7 +30,7 @@ import {
 export const Route = createFileRoute("/alpha-plus")({
   head: () => ({
     meta: [
-      { title: "Alpha+ Enrichment & Exam Preparation — Alpha STEM Academy" },
+      { title: "Alpha+ | More Learning. More Possibilities." },
       {
         name: "description",
         content:
