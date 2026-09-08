@@ -7,24 +7,13 @@ export const navItems = [
 ] as const;
 
 export const programItems = [
-  {
-    slug: "engineering-robotics",
-    title: "Engineering & Robotics",
-    summary:
-      "Systems thinking, design and build — from first principles to working prototypes.",
-  },
-  {
-    slug: "data-machine-learning",
-    title: "Data & Machine Learning",
-    summary:
-      "Statistics, models and literacy in the tools that will shape the next decade.",
-  },
-  {
-    slug: "creative-coding-design",
-    title: "Creative Coding & Design",
-    summary:
-      "Where engineering meets expression — code, design and human-centred craft.",
-  },
+  { title: "K–12 Virtual School", to: "/programs", hash: "k12" },
+  { title: "Core Academic Programmes", to: "/programs", hash: "academics" },
+  { title: "The Alpha Learning Model", to: "/programs", hash: "learning-model" },
+  { title: "Financial Literacy", to: "/alpha-plus", hash: "financial-literacy" },
+  { title: "Languages", to: "/alpha-plus", hash: "nigerian-languages" },
+  { title: "School Coding Clubs", to: "/alpha-plus", hash: "coding-clubs" },
+  { title: "Exam Preparation", to: "/alpha-plus", hash: "exam-prep" },
 ] as const;
 
 export const contact = {
