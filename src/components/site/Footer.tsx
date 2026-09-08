@@ -5,9 +5,13 @@ import { Logo } from "./Logo";
 import { contact, navItems, programItems, telHref } from "./nav-items";
 
 const socials = [
-  { label: "LinkedIn", Icon: Linkedin },
-  { label: "Instagram", Icon: Instagram },
-  { label: "YouTube", Icon: Youtube },
+  { label: "LinkedIn", Icon: Linkedin, href: "#" },
+  {
+    label: "Instagram — @alphastemacademy_",
+    Icon: Instagram,
+    href: "https://www.instagram.com/alphastemacademy_/",
+  },
+  { label: "YouTube", Icon: Youtube, href: "#" },
 ];
 
 export function Footer() {
