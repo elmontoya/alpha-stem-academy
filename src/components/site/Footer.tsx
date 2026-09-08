@@ -5,9 +5,13 @@ import { Logo } from "./Logo";
 import { contact, navItems, programItems, telHref } from "./nav-items";
 
 const socials = [
-  { label: "LinkedIn", Icon: Linkedin },
-  { label: "Instagram", Icon: Instagram },
-  { label: "YouTube", Icon: Youtube },
+  { label: "LinkedIn", Icon: Linkedin, href: "#" },
+  {
+    label: "Instagram — @alphastemacademy_",
+    Icon: Instagram,
+    href: "https://www.instagram.com/alphastemacademy_/",
+  },
+  { label: "YouTube", Icon: Youtube, href: "#" },
 ];
 
 export function Footer() {
@@ -22,10 +26,12 @@ export function Footer() {
               and human-capability development.
             </p>
             <div className="mt-6 flex gap-3">
-              {socials.map(({ label, Icon }) => (
+              {socials.map(({ label, Icon, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target={href === "#" ? undefined : "_blank"}
+                  rel={href === "#" ? undefined : "noreferrer noopener"}
                   aria-label={label}
                   className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:text-foreground"
                 >
