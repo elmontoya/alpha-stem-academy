@@ -43,7 +43,7 @@ export function PrimaryLink({
   return (
     <Link
       to={to}
-      className="inline-block rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-foreground/90"
+      className="inline-block rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
     >
       {children}
     </Link>

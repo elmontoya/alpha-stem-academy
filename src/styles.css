@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Alpha STEM Academy design system — "Playful Lab".
- * Kid-friendly, bright and bouncy: black, green, yellow, white.
+ * Alpha STEM Academy design system — "Cosmic Classroom".
+ * A bright, calm space-exploration palette with friendly STEM accents.
  */
 
 @theme inline {
@@ -38,6 +38,15 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-space-blue: var(--space-blue);
+  --color-sky-blue: var(--sky-blue);
+  --color-galaxy-purple: var(--galaxy-purple);
+  --color-playful-pink: var(--playful-pink);
+  --color-sunshine-yellow: var(--sunshine-yellow);
+  --color-mint-green: var(--mint-green);
+  --color-soft-lavender: var(--soft-lavender);
+  --color-cloud-white: var(--cloud-white);
+  --color-midnight-blue: var(--midnight-blue);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -46,30 +55,40 @@
   --shadow-card-hover: 0 16px 0 -2px var(--shadow-tint-strong);
   --shadow-float: 0 14px 34px -18px var(--shadow-tint-strong);
 
-  --ease-instrument: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-instrument: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 :root {
   --radius: 1.5rem;
 
-  --background: oklch(0.995 0.008 110);
-  --foreground: oklch(0.19 0.01 160);
-  --surface: oklch(1 0 0);
-  --muted: oklch(0.962 0.024 140);
-  --muted-foreground: oklch(0.44 0.02 165);
-  --primary: oklch(0.53 0.115 174);
-  --primary-foreground: oklch(0.99 0.01 120);
-  --primary-soft: oklch(0.72 0.13 165);
-  --signal: oklch(0.86 0.17 96);
-  --accent: oklch(0.93 0.15 100);
-  --accent-foreground: oklch(0.24 0.03 100);
-  --border: oklch(0.19 0.01 160 / 0.14);
-  --input: oklch(0.19 0.01 160 / 0.2);
-  --ring: oklch(0.53 0.115 174);
+  --space-blue: oklch(0.55 0.22 262);
+  --sky-blue: oklch(0.75 0.13 230);
+  --galaxy-purple: oklch(0.62 0.23 294);
+  --playful-pink: oklch(0.72 0.18 5);
+  --sunshine-yellow: oklch(0.86 0.17 91);
+  --mint-green: oklch(0.86 0.12 164);
+  --soft-lavender: oklch(0.94 0.03 295);
+  --cloud-white: oklch(1 0 0);
+  --midnight-blue: oklch(0.27 0.08 264);
+
+  --background: var(--cloud-white);
+  --foreground: var(--midnight-blue);
+  --surface: var(--cloud-white);
+  --muted: var(--soft-lavender);
+  --muted-foreground: oklch(0.43 0.055 264);
+  --primary: var(--space-blue);
+  --primary-foreground: var(--cloud-white);
+  --primary-soft: var(--sky-blue);
+  --signal: var(--sunshine-yellow);
+  --accent: var(--mint-green);
+  --accent-foreground: var(--midnight-blue);
+  --border: oklch(0.55 0.22 262 / 0.18);
+  --input: oklch(0.55 0.22 262 / 0.28);
+  --ring: var(--space-blue);
   --destructive: oklch(0.55 0.19 25);
 
-  --shadow-tint: oklch(0.19 0.01 160 / 0.14);
-  --shadow-tint-strong: oklch(0.19 0.01 160 / 0.22);
+  --shadow-tint: oklch(0.27 0.08 264 / 0.12);
+  --shadow-tint-strong: oklch(0.27 0.08 264 / 0.2);
 }
 
 @layer base {
@@ -87,6 +106,10 @@
     color: var(--color-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 18% 12%, oklch(0.75 0.13 230 / 0.08) 0 1px, transparent 1.6px),
+      radial-gradient(circle at 83% 28%, oklch(0.62 0.23 294 / 0.07) 0 1px, transparent 1.6px);
+    background-size: 42px 42px, 58px 58px;
   }
 
   h1,
@@ -143,10 +166,52 @@
 }
 
 @utility glass-panel {
-  border: 2px solid var(--color-border);
-  border-radius: 1.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
   background-color: var(--surface);
   box-shadow: var(--shadow-card);
+}
+
+@utility cosmic-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+@utility cosmic-sky {
+  background-image:
+    radial-gradient(circle at 8% 17%, oklch(0.75 0.13 230 / 0.7) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 72% 36%, oklch(0.86 0.17 91 / 0.85) 0 1.5px, transparent 2.2px),
+    radial-gradient(circle at 36% 81%, oklch(0.62 0.23 294 / 0.5) 0 1px, transparent 1.8px),
+    linear-gradient(135deg, var(--color-midnight-blue), oklch(0.33 0.13 269));
+}
+
+@utility space-float {
+  animation: space-float 7s ease-in-out infinite;
+}
+
+.cosmic-footer {
+  --foreground: var(--cloud-white);
+  --background: var(--midnight-blue);
+  --surface: oklch(0.33 0.1 264);
+  --muted-foreground: oklch(0.83 0.035 255);
+  --border: oklch(0.9 0.04 255 / 0.22);
+}
+
+.cosmic-footer a:focus-visible {
+  outline-color: var(--sunshine-yellow);
+}
+
+.cosmic-footer a:hover {
+  color: var(--sky-blue);
+}
+
+@keyframes space-float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -158,5 +223,8 @@
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+  .space-float {
+    animation: none;
   }
 }
