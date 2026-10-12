@@ -15,6 +15,7 @@ import {
 
 import aboutImage from "@/assets/about-learning.jpg";
 import virtualClass from "@/assets/home-virtual-class.jpg";
+import { SpaceSticker } from "@/components/site/SpaceSticker";
 import {
   EnquiryCta,
   Eyebrow,
@@ -195,7 +196,7 @@ function About() {
               </p>
             </div>
           </div>
-          <div className="lg:col-span-5">
+          <div className="relative lg:col-span-5">
             <img
               src={aboutImage}
               alt="A student joining a live online class at a bright home desk"
@@ -204,6 +205,7 @@ function About() {
               height={1200}
               className="rise aspect-square w-full rounded-3xl object-cover outline-1 -outline-offset-1 outline-black/5 [animation-delay:220ms]"
             />
+            <SpaceSticker kind="planet" className="absolute -right-5 -top-5 z-10 w-24 sm:w-32" />
           </div>
         </div>
       </section>

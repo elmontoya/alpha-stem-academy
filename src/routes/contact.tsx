@@ -37,7 +37,7 @@ export const Route = createFileRoute("/contact")({
           "Parents, schools, organisations and students — send an enquiry and our team will be in touch.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/contact" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
     scripts: [

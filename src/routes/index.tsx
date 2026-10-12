@@ -26,6 +26,7 @@ import {
 
 import heroLearners from "@/assets/home-hero-learners.jpg";
 import virtualClass from "@/assets/home-virtual-class.jpg";
+import { SpaceSticker } from "@/components/site/SpaceSticker";
 import {
   Eyebrow,
   GlassCard,
@@ -237,6 +238,7 @@ function Home() {
                 height={1600}
                 className="aspect-4/5 w-full rounded-3xl object-cover outline-1 -outline-offset-1 outline-black/5"
               />
+              <SpaceSticker kind="astronaut" className="absolute -right-5 top-5 z-10 w-24 sm:w-32" />
               <div className="glass-panel absolute -bottom-6 left-4 hidden w-52 rounded-2xl p-4 shadow-float sm:block">
                 <p className="label-mono text-primary">Learning Model</p>
                 <p className="mt-2 text-sm font-medium leading-snug">
