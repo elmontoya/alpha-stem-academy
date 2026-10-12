@@ -28,6 +28,7 @@ import {
   SecondaryLink,
   Section,
 } from "@/components/site/primitives";
+import { SpaceSticker } from "@/components/site/SpaceSticker";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -141,10 +142,6 @@ function Programs() {
     <div className="mx-auto max-w-7xl px-6">
       {/* HERO */}
       <section className="relative py-14 lg:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 right-0 size-[420px] rounded-full bg-primary/10 blur-3xl"
-        />
         <div className="relative grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <Eyebrow>// Programmes</Eyebrow>
@@ -174,11 +171,12 @@ function Programs() {
               className="rise aspect-4/3 w-full rounded-[28px] object-cover shadow-card outline-2 -outline-offset-2 outline-black/5 [animation-delay:200ms]"
             />
           </div>
+          <SpaceSticker kind="planet" className="absolute -right-3 top-5 z-10 hidden w-24 lg:block" />
         </div>
       </section>
 
       {/* K-12 VIRTUAL SCHOOL */}
-      <Section className="pt-0">
+      <Section id="k12" className="pt-0">
         <div className="glass-panel grid gap-10 rounded-[28px] p-8 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-7">
             <Eyebrow>(a) The school</Eyebrow>
@@ -219,7 +217,7 @@ function Programs() {
       </Section>
 
       {/* CORE ACADEMIC PROGRAMMES */}
-      <Section className="pt-0">
+      <Section id="academics" className="pt-0">
         <Eyebrow>(b) Core academics</Eyebrow>
         <h2 className="mt-4 max-w-[26ch] font-display text-3xl font-semibold lg:text-4xl">
           Core Academic Programmes
@@ -307,7 +305,7 @@ function Programs() {
       </Section>
 
       {/* ALPHA LEARNING MODEL */}
-      <Section className="pt-0">
+      <Section id="learning-model" className="pt-0">
         <Eyebrow>(c) How we teach</Eyebrow>
         <h2 className="mt-4 max-w-[22ch] font-display text-3xl font-semibold lg:text-4xl">
           The Alpha Learning Model

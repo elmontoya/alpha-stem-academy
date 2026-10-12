@@ -1,26 +1,24 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 import { Logo } from "./Logo";
 import { contact, navItems, programItems, telHref } from "./nav-items";
 
 const socials = [
-  { label: "LinkedIn", Icon: Linkedin, href: "#" },
   {
     label: "Instagram — @alphastemacademy_",
     Icon: Instagram,
     href: "https://www.instagram.com/alphastemacademy_/",
   },
-  { label: "YouTube", Icon: Youtube, href: "#" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="cosmic-footer border-t border-border bg-midnight-blue text-foreground">
       <div className="mx-auto max-w-7xl px-6 py-14">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Logo />
+            <Logo tone="light" />
             <p className="mt-5 max-w-[40ch] text-sm text-pretty text-muted-foreground">
               A 100% virtual STEM institution focused on personalised learning, innovation
               and human-capability development.
@@ -30,8 +28,8 @@ export function Footer() {
                 <a
                   key={label}
                   href={href}
-                  target={href === "#" ? undefined : "_blank"}
-                  rel={href === "#" ? undefined : "noreferrer noopener"}
+                  target="_blank"
+                  rel="noreferrer noopener"
                   aria-label={label}
                   className="grid size-10 place-items-center rounded-xl border border-border text-muted-foreground transition-colors hover:text-foreground"
                 >

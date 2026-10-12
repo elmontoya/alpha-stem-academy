@@ -19,6 +19,7 @@ import {
 
 import financeImage from "@/assets/alphaplus-financial-literacy.jpg";
 import clubImage from "@/assets/alphaplus-coding-club.jpg";
+import { SpaceSticker } from "@/components/site/SpaceSticker";
 import {
   Eyebrow,
   GlassCard,
@@ -141,10 +142,6 @@ function AlphaPlus() {
     <div className="mx-auto max-w-7xl px-6">
       {/* HERO */}
       <section className="relative py-14 lg:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 right-0 size-[420px] rounded-full bg-primary/10 blur-3xl"
-        />
         <div className="relative grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Eyebrow>// Alpha+</Eyebrow>
@@ -163,11 +160,12 @@ function AlphaPlus() {
               opportunities.
             </p>
             <div className="rise mt-8 flex flex-wrap gap-3 [animation-delay:240ms]">
-              <PrimaryLink to="/programs">Explore Alpha+ Programmes</PrimaryLink>
+              <PrimaryLink to="/alpha-plus">Explore Alpha+ Programmes</PrimaryLink>
               <SecondaryLink to="/contact">Speak With Us</SecondaryLink>
             </div>
           </div>
           <div className="lg:col-span-5">
+            <SpaceSticker kind="rocket" className="mb-3 ml-auto w-20 lg:hidden" />
             <div className="rise glass-panel rounded-[28px] p-6 [animation-delay:200ms]">
               <p className="label-mono text-primary">Inside Alpha+</p>
               <ul className="mt-4 grid gap-3">
@@ -195,7 +193,7 @@ function AlphaPlus() {
       </section>
 
       {/* FINANCIAL LITERACY */}
-      <Section className="pt-0">
+      <Section id="financial-literacy" className="pt-0">
         <div className="grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <img
@@ -226,7 +224,7 @@ function AlphaPlus() {
       </Section>
 
       {/* NIGERIAN LANGUAGES */}
-      <Section className="pt-0">
+      <Section id="nigerian-languages" className="pt-0">
         <Eyebrow>(b) Nigerian languages</Eyebrow>
         <h2 className="mt-4 max-w-[24ch] font-display text-3xl font-semibold lg:text-4xl">
           Know the world. Know where you come from.
@@ -261,7 +259,7 @@ function AlphaPlus() {
       </Section>
 
       {/* GERMAN & SPANISH */}
-      <Section className="pt-0">
+      <Section id="coding-clubs" className="pt-0">
         <div className="glass-panel grid gap-10 rounded-[28px] p-8 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-6">
             <Eyebrow>(c) Global languages</Eyebrow>
@@ -301,7 +299,7 @@ function AlphaPlus() {
       </Section>
 
       {/* CODING CLUBS */}
-      <Section className="pt-0">
+      <Section id="exam-prep" className="pt-0">
         <div className="grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <Eyebrow>(d) Coding clubs</Eyebrow>
@@ -503,7 +501,7 @@ function AlphaPlus() {
             More learning. More possibilities.
           </h2>
           <div className="relative mt-8 flex flex-wrap justify-center gap-3">
-            <PrimaryLink to="/programs">Explore Alpha+ Programmes</PrimaryLink>
+            <PrimaryLink to="/alpha-plus">Explore Alpha+ Programmes</PrimaryLink>
             <SecondaryLink to="/contact">Speak With Us</SecondaryLink>
           </div>
         </div>

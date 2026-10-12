@@ -77,12 +77,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Alpha STEM Academy — Virtual STEM School" },
-      {
-        name: "description",
-        content:
-          "Alpha STEM Academy is a 100% virtual STEM school offering personalised K-12 learning in engineering, data and creative technology.",
-      },
       { name: "author", content: "Alpha STEM Academy" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -21,7 +21,7 @@ export function Logo({ tone = "dark" }: { tone?: "dark" | "light" }) {
       />
       <span
         className={`font-display text-[10px] font-semibold leading-tight sm:text-[11px] ${
-          isLight ? "text-background/70" : "text-muted-foreground"
+          isLight ? "text-cloud-white/75" : "text-muted-foreground"
         }`}
       >
         Where Learning

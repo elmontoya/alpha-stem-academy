@@ -20,8 +20,8 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? "border-border bg-background/85 shadow-card backdrop-blur-md"
-          : "border-transparent bg-background/60 backdrop-blur-sm"
+          ? "border-border bg-background/95 shadow-float backdrop-blur-md"
+          : "border-transparent bg-background/90 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6">
@@ -49,7 +49,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="hidden rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 sm:inline-block"
+              className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:inline-block"
             >
               Enquire Now
             </Link>
@@ -91,7 +91,7 @@ export function Header() {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="block rounded-full bg-foreground px-5 py-3 text-center text-sm font-semibold text-background"
+               className="block rounded-full bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground"
               >
                 Enquire Now
               </Link>

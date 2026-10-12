@@ -18,7 +18,7 @@ export const Route = createFileRoute("/privacy")({
         content: "Our approach to personal data, enquiries and learner privacy.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/privacy" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/privacy" }],
   }),

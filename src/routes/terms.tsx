@@ -18,7 +18,7 @@ export const Route = createFileRoute("/terms")({
         content: "Enrolment, conduct, payments and use of our virtual programmes.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/terms" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/terms" }],
   }),
