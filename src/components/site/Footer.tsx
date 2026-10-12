@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 import { Logo } from "./Logo";
 import { contact, navItems, programItems, telHref } from "./nav-items";

@@ -77,6 +77,9 @@ export function PageHero({
         className="pointer-events-none absolute -top-24 right-0 size-[420px] rounded-full bg-primary/10 blur-3xl"
       />
       <div className="relative">
+        <div className="absolute right-0 top-0 hidden lg:block">
+          <SpaceSticker kind="astronaut" className="w-24" />
+        </div>
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="rise mt-5 max-w-[26ch] font-display text-4xl font-semibold leading-[1.05] lg:text-6xl">
           {title}
@@ -88,6 +91,8 @@ export function PageHero({
     </section>
   );
 }
+
+import { SpaceSticker } from "./SpaceSticker";
 
 export function EnquiryCta({
   title = "Ready to begin the conversation?",
