@@ -259,7 +259,7 @@ function AlphaPlus() {
       </Section>
 
       {/* GERMAN & SPANISH */}
-      <Section id="coding-clubs" className="pt-0">
+      <Section className="pt-0">
         <div className="glass-panel grid gap-10 rounded-[28px] p-8 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-6">
             <Eyebrow>(c) Global languages</Eyebrow>
@@ -299,7 +299,7 @@ function AlphaPlus() {
       </Section>
 
       {/* CODING CLUBS */}
-      <Section id="exam-prep" className="pt-0">
+      <Section id="coding-clubs" className="pt-0">
         <div className="grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <Eyebrow>(d) Coding clubs</Eyebrow>
@@ -346,7 +346,7 @@ function AlphaPlus() {
       </Section>
 
       {/* EXAM PREPARATION */}
-      <Section className="pt-0">
+      <Section id="exam-prep" className="pt-0">
         <Eyebrow>(e) Global preparation</Eyebrow>
         <h2 className="mt-4 max-w-[22ch] font-display text-3xl font-semibold lg:text-4xl">
           Prepare Beyond the Classroom.

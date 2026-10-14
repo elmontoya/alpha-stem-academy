@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
+import { SpaceSticker } from "./SpaceSticker";
+
 export function Section({
   children,
   className = "",
@@ -91,8 +93,6 @@ export function PageHero({
     </section>
   );
 }
-
-import { SpaceSticker } from "./SpaceSticker";
 
 export function EnquiryCta({
   title = "Ready to begin the conversation?",
