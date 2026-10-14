@@ -360,7 +360,7 @@ function Contact() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="w-full rounded-full bg-foreground px-8 py-4 text-sm font-semibold text-background transition-colors hover:bg-foreground/90 disabled:opacity-70 sm:w-auto"
+                      className="w-full rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-70 sm:w-auto"
                     >
                       {status === "sending" ? "Sending…" : "Send Enquiry"}
                     </button>

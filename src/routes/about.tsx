@@ -262,15 +262,7 @@ function About() {
 
       {/* BRAND STATEMENT */}
       <Section className="pt-0">
-        <figure className="glass-panel relative overflow-hidden rounded-[28px] bg-foreground p-10 text-center lg:p-16">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-16 -left-10 size-64 rounded-full bg-signal/25 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-20 -right-10 size-72 rounded-full bg-primary/30 blur-3xl"
-          />
+        <figure className="cosmic-sky relative overflow-hidden rounded-[28px] border border-border p-10 text-center shadow-float lg:p-16">
           <Quote
             aria-hidden="true"
             className="relative mx-auto size-10 text-signal"

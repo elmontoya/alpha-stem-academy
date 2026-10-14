@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
+import { SpaceSticker } from "./SpaceSticker";
+
 export function Section({
   children,
   className = "",
@@ -72,10 +74,6 @@ export function PageHero({
 }) {
   return (
     <section className="relative py-14 lg:py-20">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 right-0 size-[420px] rounded-full bg-primary/10 blur-3xl"
-      />
       <div className="relative">
         <div className="absolute right-0 top-0 hidden lg:block">
           <SpaceSticker kind="astronaut" className="w-24" />
@@ -91,8 +89,6 @@ export function PageHero({
     </section>
   );
 }
-
-import { SpaceSticker } from "./SpaceSticker";
 
 export function EnquiryCta({
   title = "Ready to begin the conversation?",

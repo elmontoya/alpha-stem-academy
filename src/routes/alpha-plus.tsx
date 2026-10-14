@@ -259,7 +259,7 @@ function AlphaPlus() {
       </Section>
 
       {/* GERMAN & SPANISH */}
-      <Section id="coding-clubs" className="pt-0">
+      <Section className="pt-0">
         <div className="glass-panel grid gap-10 rounded-[28px] p-8 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-6">
             <Eyebrow>(c) Global languages</Eyebrow>
@@ -299,7 +299,7 @@ function AlphaPlus() {
       </Section>
 
       {/* CODING CLUBS */}
-      <Section id="exam-prep" className="pt-0">
+      <Section id="coding-clubs" className="pt-0">
         <div className="grid items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <Eyebrow>(d) Coding clubs</Eyebrow>
@@ -346,7 +346,7 @@ function AlphaPlus() {
       </Section>
 
       {/* EXAM PREPARATION */}
-      <Section className="pt-0">
+      <Section id="exam-prep" className="pt-0">
         <Eyebrow>(e) Global preparation</Eyebrow>
         <h2 className="mt-4 max-w-[22ch] font-display text-3xl font-semibold lg:text-4xl">
           Prepare Beyond the Classroom.
@@ -391,11 +391,7 @@ function AlphaPlus() {
 
       {/* ACADEMIC PREPARATION CTA */}
       <Section className="pt-0">
-        <div className="relative overflow-hidden rounded-[28px] border-2 border-border bg-foreground p-8 lg:p-14">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-10 -top-16 size-72 rounded-full bg-signal/25 blur-3xl"
-          />
+        <div className="cosmic-sky relative overflow-hidden rounded-[28px] border border-border p-8 shadow-float lg:p-14">
           <div className="relative grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
               <p className="label-mono text-signal">Academic preparation</p>
@@ -489,11 +485,7 @@ function AlphaPlus() {
 
       {/* FINAL CTA */}
       <section className="py-8 pb-20">
-        <div className="glass-panel relative overflow-hidden rounded-[28px] p-10 text-center lg:p-16">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-24 -left-16 size-[320px] rounded-full bg-primary/10 blur-3xl"
-          />
+        <div className="cosmic-sky relative overflow-hidden rounded-[28px] border border-border p-10 text-center shadow-float lg:p-16">
           <span className="relative inline-grid size-12 place-items-center rounded-2xl bg-signal text-accent-foreground">
             <Rocket className="size-6" aria-hidden="true" />
           </span>
