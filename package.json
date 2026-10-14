@@ -8,6 +8,7 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
+    "audit:links": "python scripts/audit_links.py",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

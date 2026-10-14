@@ -382,15 +382,7 @@ function Programs() {
 
       {/* FINAL CTA */}
       <section className="py-8 pb-20">
-        <div className="glass-panel relative overflow-hidden rounded-[28px] p-10 text-center lg:p-16">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal/60 to-transparent"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-24 -left-16 size-[320px] rounded-full bg-primary/10 blur-3xl"
-          />
+        <div className="cosmic-sky relative overflow-hidden rounded-[28px] border border-border p-10 text-center shadow-float lg:p-16">
           <h2 className="relative mx-auto max-w-[28ch] font-display text-3xl font-semibold lg:text-5xl">
             Don&apos;t just prepare for the next examination. Prepare for what
             comes after it.

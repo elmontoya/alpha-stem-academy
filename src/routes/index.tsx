@@ -195,14 +195,6 @@ function Home() {
     <div className="mx-auto max-w-7xl px-6">
       {/* SECTION 1 — HERO */}
       <section className="relative py-14 lg:py-24">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 right-0 size-[480px] max-w-full rounded-full bg-primary/10 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-10 left-0 size-[320px] max-w-full rounded-full bg-signal/25 blur-3xl"
-        />
         <div className="relative grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="eyebrow rise">100% Virtual STEM Academy</p>
@@ -310,11 +302,7 @@ function Home() {
 
       {/* SECTION 4 — WHAT WE BELIEVE */}
       <section className="py-8">
-        <div className="relative overflow-hidden rounded-[28px] border-2 border-border bg-foreground p-8 lg:p-14">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-16 -top-20 size-80 rounded-full bg-signal/25 blur-3xl"
-          />
+        <div className="cosmic-sky relative overflow-hidden rounded-[28px] border border-border p-8 shadow-float lg:p-14">
           <div className="relative">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-signal">
               What we believe
@@ -488,15 +476,7 @@ function Home() {
 
       {/* SECTION 9 — FINAL CTA */}
       <section className="py-8 pb-20">
-        <div className="glass-panel relative overflow-hidden rounded-[28px] p-10 text-center lg:p-16">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-signal to-transparent"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-24 left-1/2 size-[380px] max-w-full -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
-          />
+        <div className="cosmic-sky relative overflow-hidden rounded-[28px] border border-border p-10 text-center shadow-float lg:p-16">
           <div className="relative">
             <h2 className="mx-auto max-w-[26ch] font-display text-3xl font-semibold lg:text-5xl">
               The future doesn&apos;t need more passive learners.

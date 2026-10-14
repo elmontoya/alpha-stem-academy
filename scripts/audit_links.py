@@ -27,6 +27,34 @@ EXPECTED_CTA_DESTINATIONS = {
     "Speak With Us": ("/contact", ""),
     "Enquire Now": ("/contact", ""),
 }
+EXPECTED_NAV_DESTINATIONS = {
+    "Home": "/",
+    "About": "/about",
+    "Programs": "/programs",
+    "Alpha+": "/alpha-plus",
+    "Contact": "/contact",
+    "Enquire Now": "/contact",
+    "Privacy Policy": "/privacy",
+    "Terms & Conditions": "/terms",
+}
+EXPECTED_PROGRAM_DESTINATIONS = {
+    "K–12 Virtual School": ("/programs", "k12"),
+    "Core Academic Programmes": ("/programs", "academics"),
+    "The Alpha Learning Model": ("/programs", "learning-model"),
+    "Financial Literacy": ("/alpha-plus", "financial-literacy"),
+    "Languages": ("/alpha-plus", "nigerian-languages"),
+    "School Coding Clubs": ("/alpha-plus", "coding-clubs"),
+    "Exam Preparation": ("/alpha-plus", "exam-prep"),
+}
+EXPECTED_HEADER_LABELS = frozenset(EXPECTED_NAV_DESTINATIONS) - {
+    "Privacy Policy",
+    "Terms & Conditions",
+}
+EXPECTED_FOOTER_LABELS = (
+    set(EXPECTED_NAV_DESTINATIONS)
+    | set(EXPECTED_PROGRAM_DESTINATIONS)
+    | {"Instagram — @alphastemacademy_"}
+)
 
 
 class PageLinks(HTMLParser):
@@ -46,9 +74,8 @@ class PageLinks(HTMLParser):
         if tag == "a":
             self.anchor = {
                 "href": attributes.get("href") or "",
-                "label": "",
-                "region": any(item in ("header", "footer", "main") for item in self.stack),
-                "main": "main" in self.stack,
+                "label": attributes.get("aria-label") or "",
+                "region": next((item for item in reversed(self.stack) if item in ("header", "footer", "main")), ""),
             }
         if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}:
             self.stack.append(tag)
@@ -90,11 +117,28 @@ def main() -> int:
         parser.feed(markup)
         page_data[route] = parser
         final_urls[route] = final_url
+        if urlparse(final_url).path.rstrip("/") != route.rstrip("/"):
+            errors.append(f"{route}: page redirected to unexpected destination {urlparse(final_url).path!r}")
 
     for route, parser in page_data.items():
         page_url = final_urls[route]
+        header_labels = {
+            " ".join(str(link["label"]).split())
+            for link in parser.links
+            if link["region"] == "header"
+        }
+        footer_labels = {
+            " ".join(str(link["label"]).split())
+            for link in parser.links
+            if link["region"] == "footer"
+        }
+        for missing in sorted(EXPECTED_HEADER_LABELS - header_labels):
+            errors.append(f"{route}: expected navigation item {missing!r} is missing")
+        for missing in sorted(EXPECTED_FOOTER_LABELS - footer_labels):
+            errors.append(f"{route}: expected footer link {missing!r} is missing")
         for link in parser.links:
-            if not link["region"]:
+            region = str(link["region"])
+            if not region:
                 continue
             href = str(link["href"]).strip()
             label = " ".join(str(link["label"]).split()) or "(icon link)"
@@ -102,6 +146,18 @@ def main() -> int:
                 errors.append(f"{route}: {label!r} has no destination")
                 continue
             resolved = urlparse(urljoin(page_url, href))
+            if region in ("header", "footer"):
+                expected_path = EXPECTED_NAV_DESTINATIONS.get(label)
+                expected_fragment = ""
+                if region == "footer" and label in EXPECTED_PROGRAM_DESTINATIONS:
+                    expected_path, expected_fragment = EXPECTED_PROGRAM_DESTINATIONS[label]
+                if label in EXPECTED_NAV_DESTINATIONS or (region == "footer" and label in EXPECTED_PROGRAM_DESTINATIONS):
+                    checks += 1
+                    if (resolved.path, resolved.fragment) != (expected_path, expected_fragment):
+                        errors.append(
+                            f"{route}: {region} link {label!r} should resolve to "
+                            f"{expected_path}#{expected_fragment}, not {resolved.path}#{resolved.fragment}"
+                        )
             if resolved.scheme not in ("http", "https"):
                 if resolved.scheme not in ("mailto", "tel") or not resolved.path:
                     errors.append(f"{route}: {label!r} uses invalid link {href!r}")
@@ -124,7 +180,7 @@ def main() -> int:
                 if resolved.fragment not in target_parser.ids:
                     errors.append(f"{route}: {label!r} points to missing section #{resolved.fragment} on {resolved.path}")
 
-            if link["main"]:
+            if region == "main":
                 expected = EXPECTED_CTA_DESTINATIONS.get(label)
                 if expected:
                     checks += 1
