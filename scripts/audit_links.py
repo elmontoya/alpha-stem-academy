@@ -25,6 +25,7 @@ EXPECTED_CTA_DESTINATIONS = {
     "Explore Alpha+ Programmes": ("/alpha-plus", "financial-literacy"),
     "Partner With Us": ("/contact", ""),
     "Speak With Us": ("/contact", ""),
+    "Learn More": ("/contact", ""),
     "Enquire Now": ("/contact", ""),
 }
 EXPECTED_NAV_DESTINATIONS = {
@@ -51,7 +52,7 @@ EXPECTED_HEADER_LABELS = frozenset(EXPECTED_NAV_DESTINATIONS) - {
     "Terms & Conditions",
 }
 EXPECTED_FOOTER_LABELS = (
-    set(EXPECTED_NAV_DESTINATIONS)
+    set(EXPECTED_NAV_DESTINATIONS) - {"Enquire Now"}
     | set(EXPECTED_PROGRAM_DESTINATIONS)
     | {"Instagram — @alphastemacademy_"}
 )
@@ -74,7 +75,8 @@ class PageLinks(HTMLParser):
         if tag == "a":
             self.anchor = {
                 "href": attributes.get("href") or "",
-                "label": attributes.get("aria-label") or "",
+                "label": "",
+                "aria_label": attributes.get("aria-label") or "",
                 "region": next((item for item in reversed(self.stack) if item in ("header", "footer", "main")), ""),
             }
         if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}:
@@ -123,12 +125,12 @@ def main() -> int:
     for route, parser in page_data.items():
         page_url = final_urls[route]
         header_labels = {
-            " ".join(str(link["label"]).split())
+            " ".join(str(link["aria_label"] or link["label"]).split())
             for link in parser.links
             if link["region"] == "header"
         }
         footer_labels = {
-            " ".join(str(link["label"]).split())
+            " ".join(str(link["aria_label"] or link["label"]).split())
             for link in parser.links
             if link["region"] == "footer"
         }
@@ -141,7 +143,7 @@ def main() -> int:
             if not region:
                 continue
             href = str(link["href"]).strip()
-            label = " ".join(str(link["label"]).split()) or "(icon link)"
+            label = " ".join(str(link["aria_label"] or link["label"]).split()) or "(icon link)"
             if not href or href == "#":
                 errors.append(f"{route}: {label!r} has no destination")
                 continue
@@ -163,7 +165,19 @@ def main() -> int:
                     errors.append(f"{route}: {label!r} uses invalid link {href!r}")
                 else:
                     checks += 1
+                    expected_contact = {
+                        "info.alphastemacademy@gmail.com": "mailto:info.alphastemacademy@gmail.com",
+                        "+234 915 770 8755": "tel:+2349157708755",
+                        "+234 810 187 2102": "tel:+2348101872102",
+                    }.get(label)
+                    if expected_contact and href != expected_contact:
+                        errors.append(f"{route}: contact link {label!r} should resolve to {expected_contact!r}, not {href!r}")
                 continue
+            if region == "footer" and label == "Instagram — @alphastemacademy_":
+                checks += 1
+                expected_instagram = "https://www.instagram.com/alphastemacademy_/"
+                if href != expected_instagram:
+                    errors.append(f"{route}: Instagram should resolve to {expected_instagram!r}, not {href!r}")
             if resolved.netloc != urlparse(base).netloc:
                 checks += 1
                 continue

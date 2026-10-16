@@ -160,7 +160,7 @@ function AlphaPlus() {
               opportunities.
             </p>
             <div className="rise mt-8 flex flex-wrap gap-3 [animation-delay:240ms]">
-              <PrimaryLink to="/alpha-plus">Explore Alpha+ Programmes</PrimaryLink>
+              <PrimaryLink to="/alpha-plus" hash="financial-literacy">Explore Alpha+ Programmes</PrimaryLink>
               <SecondaryLink to="/contact">Speak With Us</SecondaryLink>
             </div>
           </div>
@@ -493,7 +493,7 @@ function AlphaPlus() {
             More learning. More possibilities.
           </h2>
           <div className="relative mt-8 flex flex-wrap justify-center gap-3">
-            <PrimaryLink to="/alpha-plus">Explore Alpha+ Programmes</PrimaryLink>
+            <PrimaryLink to="/alpha-plus" hash="financial-literacy">Explore Alpha+ Programmes</PrimaryLink>
             <SecondaryLink to="/contact">Speak With Us</SecondaryLink>
           </div>
         </div>
