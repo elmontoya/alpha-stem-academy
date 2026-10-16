@@ -52,7 +52,7 @@ EXPECTED_HEADER_LABELS = frozenset(EXPECTED_NAV_DESTINATIONS) - {
     "Terms & Conditions",
 }
 EXPECTED_FOOTER_LABELS = (
-    set(EXPECTED_NAV_DESTINATIONS)
+    set(EXPECTED_NAV_DESTINATIONS) - {"Enquire Now"}
     | set(EXPECTED_PROGRAM_DESTINATIONS)
     | {"Instagram — @alphastemacademy_"}
 )
