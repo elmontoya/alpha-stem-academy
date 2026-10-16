@@ -25,6 +25,7 @@ EXPECTED_CTA_DESTINATIONS = {
     "Explore Alpha+ Programmes": ("/alpha-plus", "financial-literacy"),
     "Partner With Us": ("/contact", ""),
     "Speak With Us": ("/contact", ""),
+    "Learn More": ("/contact", ""),
     "Enquire Now": ("/contact", ""),
 }
 EXPECTED_NAV_DESTINATIONS = {
