@@ -115,15 +115,7 @@ Do not invent testimonials, statistics, accreditation, awards, partnerships, stu
 
 Create the overall design system and reusable components first, then use the same visual language throughout every page.
 
-This project was built with [Lovable](https://lovable.dev).
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/598d9644-8835-45f2-a8dc-2d3928563044).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -135,3 +127,4 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+**Built by el-montoya TECH**
